@@ -4,15 +4,18 @@
 			<div class="col-sm-4 col-sm-offset-1">
 				<div class="login-form"><!--login form-->
 					<h2>Login to your account</h2>
-					<form action="#">
-						<input type="text" placeholder="Name" />
-						<input type="email" placeholder="Email Address" />
+					<%= form_with(url: sessions_create_path, method: "post", local: true) do |form| %>
+					
+						<%= form.text_field :email, placeholder: "Email Address" %>
+
+						<%= form.text_field :password, placeholder: "Password" %>
 						<span>
-							<input type="checkbox" class="checkbox"> 
+							<%= check_box_tag :remember_me, true, params[:remember_me] %> 
 							Keep me signed in
 						</span>
 						<button type="submit" class="btn btn-default">Login</button>
-					</form>
+						
+					<% end %>
 				</div><!--/login form-->
 			</div>
 			<div class="col-sm-1">
@@ -22,14 +25,14 @@
 				<div class="signup-form"><!--sign up form-->
 					<h2>New User Signup!</h2>
 					
-					<%= form_with(url: "/sessions/create", method: "post", local: true) do |form| %>
+					<%= form_with(url: sessions_create_path, method: "post", local: true) do |form| %>
 							<%= form.text_field :name, placeholder: "Name" %>
 						
 							<%= form.text_field :email, placeholder: "Email Address" %>
 
 							<%= form.text_field :password, placeholder: "Password" %>
 
-							<%= form.submit "Signup", class: "btn btn-default" %>
+							<button type="submit" class="btn btn-default">Signup</button>
 					<% end %>
 
 				</div><!--/sign up form-->
