@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4 clearfix">
                 <div class="logo pull-left">
-                    <%= link_to image_tag("home/logo.png"), welcome_index_path %>
+                    <%= link_to image_tag("home/logo.png"), welcome_home_path %>
                 </div>
                 <div class="btn-group pull-right clearfix">
                     <div class="btn-group">
@@ -58,8 +58,8 @@
                 </div>
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li><%= link_to "Home", welcome_index_path, class: "active" %></li>
-                        <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                        <li><%= link_to "Home", welcome_home_path, class: "active" %></li>
+                        <li class="dropdown"><%= link_to "<i class='fa fa-angle-down'></i> Shop".html_safe, shops_shop_path %>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="shop.html">Products</a></li>
                                 <li><a href="product-details.html">Product Details</a></li> 

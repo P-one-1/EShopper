@@ -4,7 +4,7 @@
 			<div class="col-sm-4 col-sm-offset-1">
 				<div class="login-form"><!--login form-->
 					<h2>Login to your account</h2>
-					<%= form_with(url: sessions_create_path, method: "post", local: true) do |form| %>
+					<%= form_with(url: sessions_login_path, method: "post", local: true) do |form| %>
 					
 						<%= form.text_field :email, placeholder: "Email Address" %>
 
