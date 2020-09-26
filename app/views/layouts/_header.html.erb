@@ -34,8 +34,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href=""><i class="fa fa-user"></i> Account</a></li>
                         <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-                        <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                        <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        <li><%= link_to "<i class='fa fa-crosshairs'></i> Checkout".html_safe, shops_checkout_path %></li>
+                        <li><%= link_to "<i class='fa fa-shopping-cart'></i> Cart".html_safe, shops_cart_path %></li> 
                         <li><%= link_to "<i class='fa fa-lock'></i> Login".html_safe, sessions_new_path %></li>
                     </ul>
                 </div>
@@ -61,17 +61,17 @@
                         <li><%= link_to "Home", welcome_home_path, class: "active" %></li>
                         <li class="dropdown"><%= link_to "<i class='fa fa-angle-down'></i> Shop".html_safe, shops_shop_path %>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="shop.html">Products</a></li>
-                                <li><a href="product-details.html">Product Details</a></li> 
-                                <li><a href="checkout.html">Checkout</a></li> 
-                                <li><a href="cart.html">Cart</a></li> 
-                                <li><a href="login.html">Login</a></li> 
+                                <li><%= link_to 'Products', shops_shop_path %></li>
+                                <li><%= link_to 'Product Details', shops_product_details_path %></li> 
+                                <li><%= link_to 'Checkout', shops_checkout_path %></li> 
+                                <li><%= link_to 'Cart', shops_cart_path %></li> 
+                                <li><%= link_to 'Login', sessions_new_path %></li> 
                             </ul>
                         </li> 
-                        <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                        <li class="dropdown"><%= link_to "<i class='fa fa-angle-down'></i> Blog".html_safe, shops_shop_path %>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="blog.html">Blog List</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
+                                <li><%= link_to 'Blog List', blogs_blog_path %></li>
+                                <li><%= link_to 'Blog Single', blogs_blog_single_path %></li>
                             </ul>
                         </li> 
                         <li><a href="404.html">404</a></li>

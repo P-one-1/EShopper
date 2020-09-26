@@ -141,11 +141,11 @@
     }
     .header_top .col-sm-6:first-child {
         display: inline-block;
-        float: left;
+        /* float: left; */
     }
     .header_top .col-sm-6:last-child {
         display: inline-block;
-        float: right;
+        /* float: right; */
     }
     .header-middle .col-sm-4 {
         display: inline-block;
@@ -248,7 +248,7 @@
     .footer-widget .col-sm-3 {
         display: inline-block;
     }
-    .single-widget {}
+    /* .single-widget {} */
     .product-information span {
         display: block;
     }
