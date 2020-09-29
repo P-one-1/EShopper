@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
 
-  get 'blogs/blog'
-  get 'blogs/blog_single'
-  
-  get 'sessions/new'
-  post 'sessions/create'
-  post 'sessions/login'
+  get 'users/new', to:'users#new'
+  post 'users/create', to:'users#create'
 
-  get 'shops/shop'
-  get 'shops/product_details'
-  get 'shops/cart'
-  get 'shops/checkout'
+  get 'blogs/blog', to:'blogs#blog'
+  get 'blogs/blog_single', to:'blogs#blog_single'
+
+  post 'sessions/login', to:'sessions#login'
+  delete 'sessions/destroy', to:'sessions#destroy'
+
+  get 'shops/shop', to:'shops#shop'
+  get 'shops/product_details', to:'shops#product_details'
+  get 'shops/cart', to:'shops#cart'
+  get 'shops/checkout', to:'shops#checkout'
 
   root 'welcome#home'
-  get 'welcome/home'
+  get 'welcome/home', to:'welcome#home'
+  get 'welcome/contact', to:'welcome#contact'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

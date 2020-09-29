@@ -36,7 +36,12 @@
                         <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                         <li><%= link_to "<i class='fa fa-crosshairs'></i> Checkout".html_safe, shops_checkout_path %></li>
                         <li><%= link_to "<i class='fa fa-shopping-cart'></i> Cart".html_safe, shops_cart_path %></li> 
-                        <li><%= link_to "<i class='fa fa-lock'></i> Login".html_safe, sessions_new_path %></li>
+                        <li><% if current_user.present? %>
+                                <%= link_to "<i class='fa fa-unlock'></i> Logout".html_safe, sessions_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+                            <% else %>
+                                <%= link_to "<i class='fa fa-lock'></i> Login".html_safe, users_new_path %>
+                            <% end %>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +70,7 @@
                                 <li><%= link_to 'Product Details', shops_product_details_path %></li> 
                                 <li><%= link_to 'Checkout', shops_checkout_path %></li> 
                                 <li><%= link_to 'Cart', shops_cart_path %></li> 
-                                <li><%= link_to 'Login', sessions_new_path %></li> 
+                                <li><%= link_to 'Login', users_new_path %></li> 
                             </ul>
                         </li> 
                         <li class="dropdown"><%= link_to "<i class='fa fa-angle-down'></i> Blog".html_safe, shops_shop_path %>
@@ -74,8 +79,7 @@
                                 <li><%= link_to 'Blog Single', blogs_blog_single_path %></li>
                             </ul>
                         </li> 
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><%= link_to 'Contact', welcome_contact_path %></li>
                     </ul>
                 </div>
             </div>

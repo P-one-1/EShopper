@@ -1,28 +1,25 @@
 class SessionsController < ApplicationController
-  def new
-    @user = User.new
-    render layout: "session"
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.save
-    redirect_to sessions_new_url
-  end
+  # before_action :logged_in?, only: [:destroy]
 
   def login
     # binding.pry
     @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      redirect_to welcome_home_url
+    if @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to root_url
     else
-      redirect_to sessions_new_url
+      redirect_to users_new_url
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url
   end
 
   private
 
   def user_params
-    params.permit(:name, :email, :password)
+    params.permit(:email, :password)
   end
 end
