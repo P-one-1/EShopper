@@ -1,0 +1,21 @@
+<div id="account-page" class="container">
+    <h2 class="title text-center">My Account</h2>
+    <div id="account-detail" class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-4">
+                <p class="user_detail">Email</p>
+                <p><%= current_user.email %></p>
+            </div>
+            <div class="col-xs-12 col-lg-8 mt-sm-5 mt-lg-0 ">
+                <p class="user_detail">Add new address</p>
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <p><%= current_user.name %></p>
+                        <p>My Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="title text-center">My Order</h2>
+</div>
