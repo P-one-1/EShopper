@@ -32,12 +32,12 @@
             <div class="col-md-8 clearfix">
                 <div class="shop-menu clearfix pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+                        <li><%= link_to "<i class='fa fa-user'></i> Account".html_safe, users_show_path %></li>
                         <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                         <li><%= link_to "<i class='fa fa-crosshairs'></i> Checkout".html_safe, shops_checkout_path %></li>
                         <li><%= link_to "<i class='fa fa-shopping-cart'></i> Cart".html_safe, shops_cart_path %></li> 
                         <li><% if current_user.present? %>
-                                <%= link_to "<i class='fa fa-unlock'></i> Logout".html_safe, sessions_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                <%= link_to "<i class='fa fa-unlock'></i> Logout".html_safe, sessions_destroy_path, method: :delete %>
                             <% else %>
                                 <%= link_to "<i class='fa fa-lock'></i> Login".html_safe, users_new_path %>
                             <% end %>
@@ -67,7 +67,6 @@
                         <li class="dropdown"><%= link_to "<i class='fa fa-angle-down'></i> Shop".html_safe, shops_shop_path %>
                             <ul role="menu" class="sub-menu">
                                 <li><%= link_to 'Products', shops_shop_path %></li>
-                                <li><%= link_to 'Product Details', shops_product_details_path %></li> 
                                 <li><%= link_to 'Checkout', shops_checkout_path %></li> 
                                 <li><%= link_to 'Cart', shops_cart_path %></li> 
                                 <li><%= link_to 'Login', users_new_path %></li> 

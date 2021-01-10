@@ -16,3 +16,13 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+require ("./cable")
+require ("./contact")
+require ("./gmaps")
+require ("./html5shiv")
+require ("./jquery")
+require ("./jquery.prettyPhoto")
+require ("./jquery.scrollUp.min.js")
+require ("./main")
+require ("./price-range")

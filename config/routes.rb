@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'users/new', to:'users#new'
+  get 'users/show', to:'users#show'
   post 'users/create', to:'users#create'
 
   get 'blogs/blog', to:'blogs#blog'

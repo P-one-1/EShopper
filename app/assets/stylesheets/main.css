@@ -456,7 +456,7 @@ ul.sub-menu {
 }
 
 .footer-widget {
-    margin-bottom: 68px;
+    margin-bottom: 0px;
 }
 
 .footer-widget .container {
@@ -827,6 +827,17 @@ h2.title {
     text-transform: uppercase;
     margin-bottom: 30px;
     position: relative;
+    margin-bottom: 35px;
+}
+
+p.user_detail{
+    color: #0066CC;
+    font-size: x-large;
+    font-weight: normal;
+    margin-bottom:10px;
+}
+#account-detail {
+    margin-bottom: 45px;
 }
 
 .product-image-wrapper {

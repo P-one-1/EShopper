@@ -478,4 +478,8 @@
     .product-information span span {
         float: none;
     }
+    .account-detail {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
 }
